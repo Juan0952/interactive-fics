@@ -19,7 +19,6 @@ const replaceAll = () => {
 const observeChanges = () => {
 	chrome.storage.sync.get(MUTATION_OBSERVER_KEY, obj => {
 		if (obj[MUTATION_OBSERVER_KEY]) {
-			document.getElementById("tooltip-container").remove()
 			$('ol').bind('DOMNodeInserted', function() {
 			    const observer = new MutationObserver((mutation_list, observer) => {
 			    	replaceAll()
