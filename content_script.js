@@ -24,7 +24,7 @@ const observeChanges = () => {
 			})
 			observer.observe(document, {
 				subtree: true,
-				childList: true
+				//childList: true
 			})
 		}
 	})
