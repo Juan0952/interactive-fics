@@ -19,12 +19,14 @@ const replaceAll = () => {
 const observeChanges = () => {
 	chrome.storage.sync.get(MUTATION_OBSERVER_KEY, obj => {
 		if (obj[MUTATION_OBSERVER_KEY]) {
-			const observer = new MutationObserver((mutation_list, observer) => {
-				replaceAll()
-			})
-			observer.observe(document, {
-				subtree: true,
-				//childList: true
+			$('ol').bind('DOMNodeInserted', function() {
+			    const observer = new MutationObserver((mutation_list, observer) => {
+			    	replaceAll()
+			    })
+			    observer.observe(document, {
+			    	subtree: true,
+			    	childList: true
+			    })
 			})
 		}
 	})
