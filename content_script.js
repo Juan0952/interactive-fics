@@ -69,10 +69,12 @@ const replace = (input_word, replace_value) => {
 	})
 }
 
-const replaceText = (textNode, input_word, replace_value) => {
-	let node_value = textNode.nodeValue
+function replaceText (textNode, input_word, replace_value) {
+	var node_value = textNode.nodeValue
 	node_value = node_value.replace(input_word, replace_value)
-	textNode.nodeValue = node_value
+	if (node_value.toLowerCase().includes(replace_value.toLowerCase())){
+		textNode.nodeValue = node_value
+	}
 }
 
 
@@ -93,7 +95,7 @@ function walk(node, v, p){
 				}
 				break;
 			case 3: // Text node
-				replaceText(node, v, p);
+			replaceText(node, v, p);
 				break;
 		}
 	}
