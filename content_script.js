@@ -1,3 +1,4 @@
+//revised by Juan
 DEACTIVATE_KEY = 'deactivate-this-extension-pls-interactive-fics-yalla-bina';
 MUTATION_OBSERVER_KEY = 'observe-this-dom-pls-interactive-fics-yalla-bina';
 PAUSED_KEY = 'pause-this-domain-pls-interactive-fics-yalla-bina';
